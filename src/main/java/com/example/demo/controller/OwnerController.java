@@ -18,7 +18,7 @@ public class OwnerController {
     @Autowired
     private OwnerRepo ownerRepo;
 
-    @PostMapping(value="/owner")
+    @PostMapping(value="/addNewOwner")
     Owner addNewOwner(@RequestBody Owner owner){
         return ownerService.addOwner(owner);
     }

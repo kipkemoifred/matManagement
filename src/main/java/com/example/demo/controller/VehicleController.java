@@ -19,7 +19,7 @@ public class VehicleController {
     @Autowired
     private VehicleRepo vehicleRepo;
 
-    @PostMapping(value="/vehicle")
+    @PostMapping(value="/addNewVehicle")
     Vehicle addNewCompany(@RequestBody Vehicle vehicle){
         return vehicleService.addVehicle(vehicle);
     }
@@ -30,7 +30,7 @@ public class VehicleController {
 ////
 ////    @DeleteMapping
 ////    @PutMapping
-    @GetMapping(value = "/vehicle/{vehicle}")
+    @GetMapping(value = "/vehicle/{vehicleId}")
     public Vehicle getSpecificVehicle(@PathVariable("vehicleId") int vehicleId) throws VehicleNotFoundException {
         return vehicleService.getVehicle(vehicleId);
 

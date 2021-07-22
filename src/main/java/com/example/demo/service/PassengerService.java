@@ -29,7 +29,10 @@ public class PassengerService {
     public Passenger updatePassenger(int passengerId,Passenger passengerDetails) throws PassengerNotFoundException {
         Passenger passenger=passengerRepo.findById(passengerId).orElseThrow(()-> new PassengerNotFoundException(passengerId));
         passenger.setPassengerId(passengerDetails.getPassengerId());
-        //expenditure.(expenditureDetails.getfName());
+        passenger.setfName(passengerDetails.getfName());
+       passenger.setlName(passengerDetails.getlName());
+       passenger.setIdNumber(passengerDetails.getIdNumber());
+       passenger.setPhoneNumber(passengerDetails.getPhoneNumber());
         Passenger updatedPassenger=passengerRepo.save(passenger);
         return updatedPassenger;
     }

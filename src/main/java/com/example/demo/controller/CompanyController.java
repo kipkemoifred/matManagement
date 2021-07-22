@@ -16,7 +16,7 @@ public class CompanyController {
     @Autowired
     private CompanyRepo companyRepository;
 
-    @PostMapping(value="/company")
+    @PostMapping(value="/addNewCompany")
     Company addNewCompany(@RequestBody Company company){
         return companyService.addCompany(company);
     }

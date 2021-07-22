@@ -17,6 +17,7 @@ public class Vehicle {
         this.maxPassengers = maxPassengers;
         this.numberPlate = numberPlate;
     }
+    public Vehicle(){}
 
     public int getVehicleId() {
         return vehicleId;

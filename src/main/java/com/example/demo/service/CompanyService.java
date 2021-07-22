@@ -29,7 +29,7 @@ public class CompanyService {
     public Company updateCompany(int companyId,Company companyDetails) throws CompanyNotFoundException {
         Company company=companyRepo.findById(companyId).orElseThrow(()-> new CompanyNotFoundException(companyId));
         company.setCompanyId(companyDetails.getCompanyId());
-        //company.set(companyDetails.getCompanyName());
+        company.setCompanyName(companyDetails.getCompanyName());
         Company updatedCompany=companyRepo.save(company);
         return updatedCompany;
     }

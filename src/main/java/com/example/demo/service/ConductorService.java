@@ -30,6 +30,9 @@ public class ConductorService {
         Conductor conductor=conductorRepo.findById(conductorId).orElseThrow(()-> new ConductorNotFoundException(conductorId));
         conductor.setConductorId(companyDetails.getConductorId());
         conductor.setfName(companyDetails.getfName());
+        conductor.setlName((companyDetails.getlName()));
+        conductor.setIdNumber(companyDetails.getIdNumber());
+        conductor.setPhoneNumber(companyDetails.getPhoneNumber());
         Conductor updatedConductor=conductorRepo.save(conductor);
         return updatedConductor;
     }

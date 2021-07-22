@@ -29,7 +29,10 @@ public class OwnerService {
     public Owner updateOwner(int ownerId,Owner ownerDetails) throws OwnerNotFoundException {
         Owner owner=ownerRepo.findById(ownerId).orElseThrow(()-> new OwnerNotFoundException(ownerId));
         owner.setOwnerId(ownerDetails.getOwnerId());
-        //expenditure.(expenditureDetails.getfName());
+        owner.setfName(ownerDetails.getfName());
+        owner.setIdNumber(ownerDetails.getIdNumber());
+        owner.setlName(ownerDetails.getlName());
+        owner.setPhoneNumber(ownerDetails.getPhoneNumber());
         Owner updatedOwner=ownerRepo.save(owner);
         return updatedOwner;
     }

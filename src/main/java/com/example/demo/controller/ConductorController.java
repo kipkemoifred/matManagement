@@ -16,11 +16,10 @@ public class ConductorController {
     @Autowired
     private ConductorRepo conductorRepo;
 
-    @PostMapping(value="/company")
+    @PostMapping(value="/addNewConductor")
     Conductor addNewConductor(@RequestBody Conductor conductor){
         return conductorService.addConductor(conductor);
     }
-
 
     //
 //    @GetMapping(value = "/user/{userId}") @PostMapping

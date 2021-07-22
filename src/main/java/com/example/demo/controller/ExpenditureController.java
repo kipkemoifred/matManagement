@@ -18,7 +18,7 @@ public class ExpenditureController {
     @Autowired
     private ExpenditureRepo expenditureRepo;
 
-    @PostMapping(value="/expenditure")
+    @PostMapping(value="/addNewExpenditure")
     Expenditure addNewExpenditure(@RequestBody Expenditure expenditure){
         return expenditureService.addExpenditure(expenditure);
     }
@@ -39,11 +39,11 @@ public class ExpenditureController {
     public List<Expenditure> getAllExpenditures(){
         return expenditureService.getExpenditures();
     }
-    @PutMapping(value = "/expenditures/{expendituresId}")
+    @PutMapping(value = "/expenditure/{expendituresId}")
     public Expenditure updateExpenditures(@RequestBody Expenditure expenditure) throws ExpenditureNotFoundException {
         return expenditureService.updateExpenditure(expenditure.getExpenditureId(), expenditure);
     }
-    @DeleteMapping("/expenditures/{expenditureId}")
+    @DeleteMapping("/expenditure/{expenditureId}")
     public ResponseEntity<?> deleteExpenditure(@PathVariable(value = "expenditureId") int expenditureId) throws ExpenditureNotFoundException {
         Expenditure expenditure = expenditureRepo.findById(expenditureId)
                 .orElseThrow(() -> new ExpenditureNotFoundException(expenditureId));

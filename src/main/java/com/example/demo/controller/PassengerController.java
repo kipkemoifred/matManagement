@@ -18,7 +18,7 @@ public class PassengerController {
     @Autowired
     private PassengerRepo passengerRepo;
 
-    @PostMapping(value="/passenger")
+    @PostMapping(value="/addNewPassenger")
     Passenger addNewPassenger(@RequestBody Passenger passenger){
         return passengerService.addPassenger(passenger);
     }

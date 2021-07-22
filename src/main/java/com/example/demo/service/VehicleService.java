@@ -29,7 +29,9 @@ public class VehicleService {
     public Vehicle updateVehicle(int vehicleId,Vehicle vehicleDetails) throws VehicleNotFoundException {
         Vehicle vehicle=vehicleRepo.findById(vehicleId).orElseThrow(()-> new VehicleNotFoundException(vehicleId));
         vehicle.setVehicleId(vehicleDetails.getVehicleId());
-        //expenditure.(expenditureDetails.getfName());
+        vehicle.setMaxPassengers(vehicleDetails.getMaxPassengers());
+        vehicle.setNumberPlate(vehicleDetails.getNumberPlate());
+        vehicle.setType(vehicleDetails.getType());
         Vehicle updatedVehicle=vehicleRepo.save(vehicle);
         return updatedVehicle;
     }

@@ -9,11 +9,14 @@ public class Expenditure {
     @Id
     private int expenditureId;
     private String expenditureType;
+    private double expenditureAmount;
 
-    public Expenditure(int expenditureId, String expenditureType) {
-        this.expenditureId = expenditureId;
+    public Expenditure( String expenditureType,double expenditureAmount) {
+
         this.expenditureType = expenditureType;
+        this.expenditureAmount=expenditureAmount;
     }
+    public Expenditure(){}
 
     public int getExpenditureId() {
         return expenditureId;
@@ -23,11 +26,28 @@ public class Expenditure {
         this.expenditureId = expenditureId;
     }
 
+    public String getExpenditureType() {
+        return expenditureType;
+    }
+
+    public void setExpenditureType(String expenditureType) {
+        this.expenditureType = expenditureType;
+    }
+
+    public double getExpenditureAmount() {
+        return expenditureAmount;
+    }
+
+    public void setExpenditureAmount(double expenditureAmount) {
+        this.expenditureAmount = expenditureAmount;
+    }
+
     @Override
     public String toString() {
         return "Expenditure{" +
                 "expenditureId=" + expenditureId +
                 ", expenditureType='" + expenditureType + '\'' +
+                ", expenditureAmount='" + expenditureAmount + '\'' +
                 '}';
     }
 }
